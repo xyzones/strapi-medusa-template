@@ -12,7 +12,7 @@ module.exports = createCoreController("api::product.product", {
       const { id: productId } = ctx.params;
       const product = await strapi.db
         .query("api::product.product")
-        .findOne({ where: { product_id: productId } });
+        .findOne({ where: { medusa_id: productId } });
       if (product && product.id) {
         return (ctx.body = {
           product,
